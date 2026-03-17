@@ -6,54 +6,70 @@
     <title>XBSAN | XB3 永久入口</title>
     <meta
       name="description"
-      content="XBSAN 是 XB3 的永久入口页。这里提供当前主站与备用地址。"
+      content="XBSAN 是 XB3 的永久入口页。这里提供主站入口与备用镜像地址。"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="page-shell">
-      <section class="hero-card">
-        <p class="eyebrow">XBSAN.COM</p>
-        <h1>XB3 永久入口</h1>
-        <p class="lead">
-          请尊敬的客人保存这个地址。主站可用时进入主站，主站异常时改走备用地址。好人必会一生平安。
-        </p>
+      <div class="background-orb background-orb-a"></div>
+      <div class="background-orb background-orb-b"></div>
 
-        <div class="primary-entry">
-          <span class="entry-label">当前推荐入口</span>
-          <a
-            id="primary-link"
-            class="primary-link"
-            href="https://www.xben3.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            进入 XB3 主站
-          </a>
-          <p id="primary-domain" class="entry-domain">xben3.com</p>
-        </div>
-
-        <section class="entry-list-block">
-          <div class="block-head">
-            <h2>备用地址</h2>
-            <span id="updated-at" class="updated-at">更新中</span>
-          </div>
-          <ul id="mirror-list" class="entry-list">
-            <li class="entry-item">
-              <a href="https://www.xbssss.com" target="_blank" rel="noreferrer">https://www.xbssss.com</a>
-            </li>
-            <li class="entry-item">
-              <a href="https://www.xbensan.com" target="_blank" rel="noreferrer">https://www.xbensan.com</a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="notice-block">
-          <h2>说明</h2>
-          <p id="notice-copy">
+      <section class="hero-shell">
+        <article class="brand-panel">
+          <p class="eyebrow">XBSAN.COM / ENTRY</p>
+          <img class="brand-logo" src="./assets/xb3-logo-chrome.svg" alt="XB3" />
+          <h1>XB3 永久入口</h1>
+          <p class="lead">
             请尊敬的客人保存这个地址。主站可用时进入主站，主站异常时改走备用地址。好人必会一生平安。
           </p>
-        </section>
+
+          <div class="signal-row">
+            <span class="signal-pill">主站：xben3.com</span>
+            <span class="signal-pill">入口：xbsan.com</span>
+            <span class="signal-pill">镜像：2 个</span>
+          </div>
+        </article>
+
+        <article class="access-panel">
+          <section class="panel-card panel-card-primary">
+            <span class="entry-label">当前推荐入口</span>
+            <a
+              id="primary-link"
+              class="primary-link"
+              href="https://www.xben3.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              进入 XB3 主站
+            </a>
+            <p id="primary-domain" class="entry-domain">xben3.com</p>
+          </section>
+
+          <section class="panel-card">
+            <div class="block-head">
+              <h2>备用地址</h2>
+              <span id="updated-at" class="updated-at">更新中</span>
+            </div>
+            <ul id="mirror-list" class="entry-list">
+              <li class="entry-item">
+                <span class="entry-status">mirror</span>
+                <a href="https://www.xbssss.com" target="_blank" rel="noreferrer">https://www.xbssss.com</a>
+              </li>
+              <li class="entry-item">
+                <span class="entry-status">mirror</span>
+                <a href="https://www.xbensan.com" target="_blank" rel="noreferrer">https://www.xbensan.com</a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="panel-card notice-card">
+            <h2>使用说明</h2>
+            <p id="notice-copy">
+              请尊敬的客人保存这个地址。主站可用时进入主站，主站异常时改走备用地址。好人必会一生平安。
+            </p>
+          </section>
+        </article>
       </section>
     </main>
 
@@ -87,18 +103,18 @@
               const li = document.createElement("li");
               li.className = "entry-item";
 
-              const a = document.createElement("a");
-              a.href = item.url;
-              a.target = "_blank";
-              a.rel = "noreferrer";
-              a.textContent = item.url;
-
               if (item.status) {
                 const badge = document.createElement("span");
                 badge.className = "entry-status";
                 badge.textContent = item.status;
                 li.appendChild(badge);
               }
+
+              const a = document.createElement("a");
+              a.href = item.url;
+              a.target = "_blank";
+              a.rel = "noreferrer";
+              a.textContent = item.url;
 
               li.appendChild(a);
               mirrorList.appendChild(li);

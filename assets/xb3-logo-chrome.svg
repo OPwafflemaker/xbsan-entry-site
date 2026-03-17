@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 260" role="img" aria-labelledby="title desc">
+  <title id="title">XB3 Chrome Neon Logo</title>
+  <desc id="desc">XB3 metallic chrome wordmark with slight neon glow.</desc>
+  <defs>
+    <linearGradient id="chromeFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fefefe"/>
+      <stop offset="16%" stop-color="#b5bcc5"/>
+      <stop offset="33%" stop-color="#ffffff"/>
+      <stop offset="52%" stop-color="#6d7581"/>
+      <stop offset="68%" stop-color="#eef1f5"/>
+      <stop offset="100%" stop-color="#7e8692"/>
+    </linearGradient>
+    <linearGradient id="innerStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#a9b1bd" stop-opacity="0.65"/>
+    </linearGradient>
+    <filter id="neonGlow" x="-20%" y="-35%" width="140%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blurA"/>
+      <feColorMatrix
+        in="blurA"
+        type="matrix"
+        values="0 0 0 0 0.37  0 0 0 0 0.80  0 0 0 0 1.0  0 0 0 0.26 0"
+        result="cyanGlow"
+      />
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blurB"/>
+      <feColorMatrix
+        in="blurB"
+        type="matrix"
+        values="0 0 0 0 0.73  0 0 0 0 0.51  0 0 0 0 1.0  0 0 0 0.17 0"
+        result="violetGlow"
+      />
+      <feMerge>
+        <feMergeNode in="cyanGlow"/>
+        <feMergeNode in="violetGlow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="innerShadow" x="-10%" y="-15%" width="120%" height="140%">
+      <feOffset dx="0" dy="1"/>
+      <feGaussianBlur stdDeviation="1.8" result="offset-blur"/>
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+      <feFlood flood-color="#0a0d12" flood-opacity="0.55" result="color"/>
+      <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+      <feComposite operator="over" in="shadow" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#neonGlow)" transform="translate(26 22)">
+    <text
+      x="0"
+      y="186"
+      font-family="Eurostile, Orbitron, 'Arial Black', system-ui, sans-serif"
+      font-size="214"
+      font-weight="900"
+      letter-spacing="-10"
+      fill="url(#chromeFill)"
+      stroke="#080a0d"
+      stroke-width="10"
+      paint-order="stroke fill"
+      style="font-style:italic"
+      filter="url(#innerShadow)"
+    >
+      XB3
+    </text>
+    <text
+      x="0"
+      y="186"
+      font-family="Eurostile, Orbitron, 'Arial Black', system-ui, sans-serif"
+      font-size="214"
+      font-weight="900"
+      letter-spacing="-10"
+      fill="none"
+      stroke="url(#innerStroke)"
+      stroke-width="3.3"
+      style="font-style:italic"
+      opacity="0.82"
+    >
+      XB3
+    </text>
+  </g>
+</svg>
