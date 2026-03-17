@@ -28,7 +28,7 @@
       "role": "mirror"
     }
   ],
-  "notice": "如果主站暂时不可用，请依次尝试备用地址，并保留本页作为永久入口。",
+  "notice": "請尊敬的客人保存這個地址。主站可用時進入主站，主站異常時改走備用地址。好人必會一生平安。",
   "routingPolicy": {
     "defaultTarget": "primary",
     "fallbackOrder": [
