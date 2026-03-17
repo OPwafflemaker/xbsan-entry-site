@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XBSAN | XB3 永久入口</title>
+    <meta
+      name="description"
+      content="XBSAN 是 XB3 的永久入口页。这里提供当前主站与备用地址。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-card">
+        <p class="eyebrow">XBSAN.COM</p>
+        <h1>XB3 永久入口</h1>
+        <p class="lead">
+          保存这个地址。主站可用时进入主站，主站异常时改走备用地址。
+        </p>
+
+        <div class="primary-entry">
+          <span class="entry-label">当前推荐入口</span>
+          <a
+            id="primary-link"
+            class="primary-link"
+            href="https://www.xben3.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            进入 XB3 主站
+          </a>
+          <p id="primary-domain" class="entry-domain">xben3.com</p>
+        </div>
+
+        <section class="entry-list-block">
+          <div class="block-head">
+            <h2>备用地址</h2>
+            <span id="updated-at" class="updated-at">更新中</span>
+          </div>
+          <ul id="mirror-list" class="entry-list">
+            <li class="entry-item">
+              <a href="https://www.xbssss.com" target="_blank" rel="noreferrer">https://www.xbssss.com</a>
+            </li>
+            <li class="entry-item">
+              <a href="https://www.xbensan.com" target="_blank" rel="noreferrer">https://www.xbensan.com</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="notice-block">
+          <h2>说明</h2>
+          <p id="notice-copy">
+            如果主站暂时不可用，请依次尝试备用地址，并保留本页作为永久入口。
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      async function boot() {
+        try {
+          const response = await fetch("./addresses.json", { cache: "no-store" });
+          if (!response.ok) {
+            return;
+          }
+
+          const data = await response.json();
+          const primaryLink = document.getElementById("primary-link");
+          const mirrorList = document.getElementById("mirror-list");
+          const noticeCopy = document.getElementById("notice-copy");
+          const updatedAt = document.getElementById("updated-at");
+          const primaryDomain = document.getElementById("primary-domain");
+
+          if (primaryLink && data.primary && data.primary.url) {
+            primaryLink.href = data.primary.url;
+            primaryLink.textContent = data.primary.label || data.primary.url;
+          }
+
+          if (primaryDomain && data.primary && data.primary.domain) {
+            primaryDomain.textContent = data.primary.domain;
+          }
+
+          if (mirrorList && Array.isArray(data.mirrors)) {
+            mirrorList.innerHTML = "";
+            data.mirrors.forEach(function (item) {
+              const li = document.createElement("li");
+              li.className = "entry-item";
+
+              const a = document.createElement("a");
+              a.href = item.url;
+              a.target = "_blank";
+              a.rel = "noreferrer";
+              a.textContent = item.url;
+
+              if (item.status) {
+                const badge = document.createElement("span");
+                badge.className = "entry-status";
+                badge.textContent = item.status;
+                li.appendChild(badge);
+              }
+
+              li.appendChild(a);
+              mirrorList.appendChild(li);
+            });
+          }
+
+          if (noticeCopy && data.notice) {
+            noticeCopy.textContent = data.notice;
+          }
+
+          if (updatedAt && data.updatedAt) {
+            updatedAt.textContent = "更新于 " + data.updatedAt.replace("T", " ").replace("+08:00", " CST");
+          }
+        } catch (_error) {
+          // Static fallback content is already rendered in HTML.
+        }
+      }
+
+      boot();
+    </script>
+  </body>
+</html>

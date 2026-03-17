@@ -1,0 +1,39 @@
+{
+  "updatedAt": "2026-03-17T06:00:00+08:00",
+  "entry": {
+    "label": "永久入口",
+    "domain": "xbsan.com",
+    "url": "https://www.xbsan.com"
+  },
+  "primary": {
+    "label": "进入 XB3 主站",
+    "domain": "xben3.com",
+    "url": "https://www.xben3.com",
+    "status": "recommended",
+    "role": "primary"
+  },
+  "mirrors": [
+    {
+      "label": "备用地址 1",
+      "domain": "xbssss.com",
+      "url": "https://www.xbssss.com",
+      "status": "standby",
+      "role": "mirror"
+    },
+    {
+      "label": "备用地址 2",
+      "domain": "xbensan.com",
+      "url": "https://www.xbensan.com",
+      "status": "standby",
+      "role": "mirror"
+    }
+  ],
+  "notice": "如果主站暂时不可用，请依次尝试备用地址，并保留本页作为永久入口。",
+  "routingPolicy": {
+    "defaultTarget": "primary",
+    "fallbackOrder": [
+      "xbssss.com",
+      "xbensan.com"
+    ]
+  }
+}
