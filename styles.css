@@ -96,6 +96,8 @@ a {
   padding: 42px 42px 38px;
   display: grid;
   align-content: start;
+  justify-items: center;
+  text-align: center;
   min-height: 640px;
 }
 
@@ -127,27 +129,6 @@ h1 {
   font-size: 18px;
   line-height: 1.8;
   color: var(--muted);
-}
-
-.signal-row {
-  margin-top: 34px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.signal-pill {
-  display: inline-flex;
-  align-items: center;
-  min-height: 36px;
-  padding: 0 14px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--panel-soft);
-  color: rgba(242, 243, 245, 0.84);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .access-panel {
