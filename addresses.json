@@ -28,7 +28,7 @@
       "role": "mirror"
     }
   ],
-  "notice": "請尊敬的客人保存這個地址。主站可用時進入主站，主站異常時改走備用地址。好人必會一生平安。",
+  "notice": "请尊敬的客人保存这个地址。主站可用时进入主站，主站异常时改走备用地址。好人必会一生平安。",
   "routingPolicy": {
     "defaultTarget": "primary",
     "fallbackOrder": [
