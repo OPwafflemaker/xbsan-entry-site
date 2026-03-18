@@ -21,10 +21,7 @@ html,
 body {
   margin: 0;
   min-height: 100%;
-  background:
-    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.08), transparent 24%),
-    radial-gradient(circle at 80% 78%, rgba(87, 116, 255, 0.12), transparent 28%),
-    linear-gradient(180deg, #020304 0%, #06080c 100%);
+  background: #040507;
   color: var(--fg);
   font-family: "SF Pro Display", "PingFang SC", "Helvetica Neue", sans-serif;
 }
@@ -34,12 +31,28 @@ body {
   overflow-x: hidden;
 }
 
+.living-gradient-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(180deg, #040507 0%, #07080c 100%);
+}
+
+.living-gradient-background canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 a {
   color: inherit;
 }
 
 .page-shell {
   position: relative;
+  z-index: 1;
   min-height: 100vh;
   padding: 28px;
   display: grid;
@@ -47,32 +60,6 @@ a {
   align-content: start;
   padding-top: clamp(32px, 8vh, 84px);
   overflow: hidden;
-}
-
-.background-orb {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(70px);
-  opacity: 0.28;
-  pointer-events: none;
-}
-
-.background-orb-a {
-  width: 360px;
-  height: 360px;
-  top: -90px;
-  left: -80px;
-  background: rgba(255, 255, 255, 0.22);
-  animation: orb-fade 900ms ease-out both;
-}
-
-.background-orb-b {
-  width: 460px;
-  height: 460px;
-  right: -120px;
-  bottom: -140px;
-  background: rgba(92, 119, 255, 0.26);
-  animation: orb-fade 1100ms ease-out both;
 }
 
 .hero-shell {
@@ -96,16 +83,6 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes orb-fade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 0.28;
   }
 }
 
