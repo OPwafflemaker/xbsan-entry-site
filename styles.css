@@ -87,7 +87,8 @@ a {
 .eyebrow {
   margin: 0 0 10px;
   font-size: 12px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   color: var(--muted);
 }
 
