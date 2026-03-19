@@ -113,6 +113,18 @@ h1 {
   line-height: 1.7;
 }
 
+.lead-line {
+  display: block;
+}
+
+.lead-line-main {
+  white-space: nowrap;
+}
+
+.lead-line-blessing {
+  margin-top: 0.28em;
+}
+
 .primary-entry,
 .entry-list-block,
 .notice-block {
@@ -228,6 +240,10 @@ h2 {
 
   .brand-logo {
     width: min(100%, 220px);
+  }
+
+  .lead-line-main {
+    white-space: normal;
   }
 
   .block-head {
