@@ -32,7 +32,7 @@ body {
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, rgba(28, 14, 18, 0.36), rgba(4, 5, 7, 0.96) 68%);
+  background: radial-gradient(circle at 50% 46%, rgba(54, 18, 24, 0.44), rgba(6, 7, 10, 0.94) 70%);
 }
 
 .living-gradient-background canvas {
@@ -116,8 +116,7 @@ h1 {
 }
 
 .primary-entry,
-.entry-list-block,
-.notice-block {
+.entry-list-block {
   margin-top: 24px;
   padding: 0;
   border: 0;
@@ -176,49 +175,42 @@ h2 {
   margin: 14px 0 0;
   padding: 0;
   display: grid;
-  gap: 12px;
+  gap: 16px;
 }
 
 .entry-item {
   display: grid;
-  gap: 8px;
+  gap: 6px;
+  justify-items: center;
 }
 
 .entry-item a {
-  display: block;
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid var(--border-soft);
-  background: linear-gradient(180deg, var(--surface-strong), var(--surface-soft));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  display: inline-block;
+  padding: 0 0 4px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
   text-decoration: none;
   word-break: break-all;
-  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
 .entry-item a:hover {
-  border-color: rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, 0.96);
   transform: translateY(-1px);
 }
 
 .entry-status {
   display: inline-flex;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
   padding: 4px 8px;
   border-radius: 999px;
-  border: 1px solid var(--border-soft);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   color: var(--muted);
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.notice-block p {
-  margin: 10px 0 0;
-  color: var(--muted);
-  line-height: 1.7;
 }
 
 @media (max-width: 640px) {

@@ -13,68 +13,80 @@ const PALETTE = {
 const TUNING = {
   mobileQuality: 0.78,
   desktopQuality: 1.0,
-  baseBlur: 86,
-  globalDrift: 0.014,
-  internalMotion: 0.024,
-  breathAmplitude: 0.022,
-  breathPeriod: 22.0,
-  vignetteStrength: 0.34,
+  baseBlur: 96,
+  globalDrift: 0.019,
+  internalMotion: 0.031,
+  breathAmplitude: 0.028,
+  breathPeriod: 18.0,
+  vignetteStrength: 0.28,
 };
 
 const BLOBS = [
   {
     color: PALETTE.wine,
-    anchor: [0.28, 0.30],
-    orbit: [0.13, 0.08],
-    radius: [0.42, 0.56],
+    anchor: [0.26, 0.28],
+    orbit: [0.16, 0.10],
+    radius: [0.46, 0.62],
     phase: 0.0,
-    alpha: 0.26,
+    alpha: 0.34,
   },
   {
     color: PALETTE.bruisedRose,
-    anchor: [0.66, 0.34],
-    orbit: [0.11, 0.10],
-    radius: [0.34, 0.46],
+    anchor: [0.68, 0.32],
+    orbit: [0.14, 0.12],
+    radius: [0.38, 0.54],
     phase: 1.4,
-    alpha: 0.24,
+    alpha: 0.3,
   },
   {
     color: PALETTE.mutedPlum,
-    anchor: [0.52, 0.62],
-    orbit: [0.16, 0.10],
-    radius: [0.36, 0.52],
+    anchor: [0.50, 0.64],
+    orbit: [0.18, 0.12],
+    radius: [0.38, 0.56],
     phase: 2.7,
-    alpha: 0.22,
+    alpha: 0.26,
   },
   {
     color: PALETTE.darkIndigo,
-    anchor: [0.74, 0.66],
-    orbit: [0.14, 0.12],
-    radius: [0.30, 0.42],
+    anchor: [0.76, 0.68],
+    orbit: [0.16, 0.14],
+    radius: [0.32, 0.46],
     phase: 4.1,
-    alpha: 0.20,
+    alpha: 0.22,
   },
   {
     color: PALETTE.umber,
-    anchor: [0.22, 0.70],
-    orbit: [0.12, 0.09],
-    radius: [0.28, 0.40],
+    anchor: [0.24, 0.72],
+    orbit: [0.14, 0.10],
+    radius: [0.32, 0.46],
     phase: 5.2,
-    alpha: 0.18,
+    alpha: 0.2,
   },
   {
     color: PALETTE.skinWarmth,
-    anchor: [0.48, 0.18],
-    orbit: [0.08, 0.06],
-    radius: [0.20, 0.30],
+    anchor: [0.50, 0.18],
+    orbit: [0.10, 0.08],
+    radius: [0.22, 0.34],
     phase: 3.2,
-    alpha: 0.12,
+    alpha: 0.16,
+  },
+  {
+    color: PALETTE.smokyPurple,
+    anchor: [0.14, 0.50],
+    orbit: [0.1, 0.14],
+    radius: [0.26, 0.38],
+    phase: 4.8,
+    alpha: 0.15,
+  },
+  {
+    color: PALETTE.bruisedRose,
+    anchor: [0.86, 0.48],
+    orbit: [0.08, 0.12],
+    radius: [0.24, 0.36],
+    phase: 0.8,
+    alpha: 0.14,
   },
 ];
-
-function clamp(value, min, max) {
-  return Math.max(min, Math.min(max, value));
-}
 
 function rgba(color, alpha) {
   return `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${alpha})`;
@@ -127,8 +139,8 @@ function drawVeil(ctx, width, height, time) {
   const sweepX = width * (0.5 + Math.sin(time * 0.009) * 0.08);
   const sweepY = height * (0.48 + Math.cos(time * 0.007) * 0.06);
   const veil = ctx.createRadialGradient(sweepX, sweepY, 0, sweepX, sweepY, Math.max(width, height) * 0.74);
-  veil.addColorStop(0, "rgba(122, 52, 56, 0.08)");
-  veil.addColorStop(0.45, "rgba(74, 46, 78, 0.06)");
+  veil.addColorStop(0, "rgba(136, 52, 56, 0.1)");
+  veil.addColorStop(0.45, "rgba(88, 54, 86, 0.08)");
   veil.addColorStop(1, "rgba(6, 8, 12, 0)");
   ctx.fillStyle = veil;
   ctx.fillRect(0, 0, width, height);

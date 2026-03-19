@@ -52,14 +52,6 @@
             </li>
           </ul>
         </section>
-
-          <section class="notice-block">
-            <h2>使用说明</h2>
-            <p id="notice-copy">
-              <span class="lead-line lead-line-main">请尊敬的客人保存这个地址。主站可用时进入主站，主站异常时改走备用地址。</span>
-              <span class="lead-line lead-line-blessing">好人必会一生平安。</span>
-            </p>
-          </section>
       </section>
     </main>
 
@@ -74,7 +66,6 @@
           const data = await response.json();
           const primaryLink = document.getElementById("primary-link");
           const mirrorList = document.getElementById("mirror-list");
-          const noticeCopy = document.getElementById("notice-copy");
           const updatedAt = document.getElementById("updated-at");
           const primaryDomain = document.getElementById("primary-domain");
 
@@ -109,10 +100,6 @@
               li.appendChild(a);
               mirrorList.appendChild(li);
             });
-          }
-
-          if (noticeCopy && data.notice) {
-            noticeCopy.textContent = data.notice;
           }
 
           if (updatedAt && data.updatedAt) {
