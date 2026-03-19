@@ -490,7 +490,7 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
   window.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("living-gradient-background");
     if (!container) return;
-    cleanup = mountLivingGradientBackground(container, { forceMotion: false });
+    cleanup = mountLivingGradientBackground(container, { forceMotion: true });
   });
 
   window.addEventListener("beforeunload", () => {
